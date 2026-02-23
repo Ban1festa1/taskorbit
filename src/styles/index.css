@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* корректный color-scheme */
+:root { color-scheme: light; }
+html.dark { color-scheme: dark; }
+
+* { -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+::selection { background: rgba(99, 102, 241, 0.18); }
+
+/* общий glass — сделан темнее в dark + задан цвет текста */
+.glass {
+  @apply bg-white/70 dark:bg-slate-950/55 backdrop-blur-xl border border-white/20 dark:border-white/10;
+  @apply text-slate-900 dark:text-slate-50;
+}
+
+/* отдельный стиль для полей формы — более контрастный */
+.field {
+  @apply w-full rounded-2xl px-4 text-sm outline-none backdrop-blur-xl shadow-sm;
+  @apply bg-white/75 text-slate-900 placeholder:text-slate-500 border border-slate-200/60;
+  @apply focus:ring-2 focus:ring-indigo-400/50;
+  @apply dark:bg-slate-950/55 dark:text-slate-50 dark:placeholder:text-slate-500 dark:border-white/10;
+}
+
+.field-area {
+  @apply w-full rounded-2xl p-4 text-sm outline-none backdrop-blur-xl shadow-sm;
+  @apply bg-white/75 text-slate-900 placeholder:text-slate-500 border border-slate-200/60;
+  @apply focus:ring-2 focus:ring-indigo-400/50;
+  @apply dark:bg-slate-950/55 dark:text-slate-50 dark:placeholder:text-slate-500 dark:border-white/10;
+}
+
+/* 3-color background */
+.edge {
+  background:
+    radial-gradient(900px circle at 12% 10%, rgba(99,102,241,.14), transparent 48%),
+    radial-gradient(900px circle at 88% 18%, rgba(16,185,129,.10), transparent 52%),
+    radial-gradient(900px circle at 40% 92%, rgba(14,165,233,.08), transparent 55%);
+}
