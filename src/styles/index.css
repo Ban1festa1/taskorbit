@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* корректный color-scheme */
 :root { color-scheme: light; }
 html.dark { color-scheme: dark; }
 
@@ -14,13 +13,11 @@ body {
 
 ::selection { background: rgba(99, 102, 241, 0.18); }
 
-/* общий glass — сделан темнее в dark + задан цвет текста */
 .glass {
   @apply bg-white/70 dark:bg-slate-950/55 backdrop-blur-xl border border-white/20 dark:border-white/10;
   @apply text-slate-900 dark:text-slate-50;
 }
 
-/* отдельный стиль для полей формы — более контрастный */
 .field {
   @apply w-full rounded-2xl px-4 text-sm outline-none backdrop-blur-xl shadow-sm;
   @apply bg-white/75 text-slate-900 placeholder:text-slate-500 border border-slate-200/60;
@@ -35,7 +32,6 @@ body {
   @apply dark:bg-slate-950/55 dark:text-slate-50 dark:placeholder:text-slate-500 dark:border-white/10;
 }
 
-/* 3-color background */
 .edge {
   background:
     radial-gradient(900px circle at 12% 10%, rgba(99,102,241,.14), transparent 48%),
